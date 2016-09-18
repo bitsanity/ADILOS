@@ -110,4 +110,4 @@ Let/note:
 * Remain free of dependency on cellular/wifi service
 * Remain free of dependency on proprietary or closed services
 * Retain responsibility for key generation, naming and public key sharing with the keymaster user
-* Any alternative keymaster or gatekeeper implementation that meets the expectations in this document may claim compliance
+* Any keymaster/gatekeeper implementation that implements kgprotocol may claim ADILOS compliance
