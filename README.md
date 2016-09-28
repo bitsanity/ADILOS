@@ -95,19 +95,4 @@ Let/note:
 | 15   | | depending on result of lookup, allow or deny access |
 | 16   | | return to step 1 |
 
-## Expectations for ADILOS-compliant implementations
 
-### Technical:
-
-* Support __only__ the Curve for key generation, signing and verifying
-* Adhere to __only__ the expectations of the kgprotocol
-* Support both compressed and uncompressed public keys (0x03 and 0x04 leading bytes)
-* Store private keys in encrypted form only
-
-### Non-technical:
-
-* Safeguard the privacy of the communicating parties (no user/device data-gathering, no traffic or location analysis)
-* Remain free of dependency on cellular/wifi service
-* Remain free of dependency on proprietary or closed services
-* Retain responsibility for key generation, naming and public key sharing with the keymaster user
-* Any keymaster/gatekeeper implementation that implements kgprotocol may claim ADILOS compliance
