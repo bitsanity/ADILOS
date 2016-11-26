@@ -28,7 +28,7 @@ Let/note:
 
 1. **Curve** is the Elliptic Curve well known to cryptographers as __secp256k1__
 2. **Signature** is an Elliptic Curve Digital Signature Algorithm (ECDSA) digital signature, generated using the Curve
-  * 32 bytes (256-bits) in length
+  * ECDSA signatures are 65 - 72 bytes
 3. **Verify** means use ECDSA to verify a signature, using the Curve
 4. **Private Key** is a 32-byte (256-bit) unsigned big integer initialized with a random value
 5. **Public Key** is a value created by correctly applying a private key to the Curve
@@ -43,7 +43,7 @@ Let/note:
   * a signature of the public key using the corresponding private key
 7. A **Response** consists of two parts concatenated and converted to Base64:
   * public key selected by user (33 or 65 bytes)
-  * signature of the message part (the gatekeeper's generated public key) of a Challenge, digitally signed with the user's selected key (32 bytes)
+  * signature of the message part (the gatekeeper's generated public key) of a Challenge, digitally signed with the user's selected key
 
 ### 3.1 Expectations for any **keymaster**
 
