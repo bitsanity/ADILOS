@@ -4,11 +4,13 @@ ADILOS assumes an authorization process in which a user's public key is recorded
 
 The reference implementation demonstrates data exchange using QR (quick read) optical codes scanned using high-definition cameras. This enables one to use a personal device such as a "smart" cellphone to obtain access.
 
-ADILOS contains three subsystems:
+ADILOS contains these subsystems:
 
 * keymaster
 * gatekeeper
 * keymaster-gatekeeper communications interface ("kgprotocol")
+* kgagent
+* kgserver
 
 ## 1. keymaster
 
@@ -23,6 +25,22 @@ A reference implementation of a gatekeeper, for Raspbian Linux on Raspberry Pi 3
 See [bitsanity / gatekeeper](https://github.com/bitsanity/gatekeeper)
 
 ## 3. kgprotocol
+
+Described in detail later in this document.
+
+## 4. kgagent
+
+A gateway that acts between a keymaster and a kgserver. The agent interacts with a keymaster to sign a server's challenge. Then the agent communicates with the kgserver to retrieve server resources.
+
+See [bitsanity / kgagent](https://github.com/bitsanity/kgagent)
+
+## 5. kgserver
+
+A network/web service that presents an authentication challenge to a connecting kgagent. Once the response is received the server knows the keymaster's public key and exchanges JSON-RPC messages with the agent on that basis.
+
+See [bitsanity / kgserver](https://github.com/bitsanity/kgserver)
+
+## 3. kgprotocol (Details)
 
 Let/note:
 
@@ -81,13 +99,13 @@ Let/note:
 | 2    | | generate Challenge using new key pair |
 | 3    | | encode and display Challenge openly |
 | 4    | | scan for Response |
-| 5    | approach gatekeeper | |
+| 5    | approach gatekeeper (or use kgagent) | |
 | 6    | select public key to use | |
 | 7    | scan Challenge | |
 | 8    | verify the challenge (check digital signature) | |
 | 9    | if challenge valid, generate Response using selected key | |
 | 10    | encode and display Response | |
-| 10   | show Response to gatekeeper | |
+| 10   | share Response with gatekeeper (or kgagent and kgserver) | |
 | 11   | | scan and decode Response |
 | 12   | | verify response (check digital signature) | |
 | 13   | | parse public key from Response |
