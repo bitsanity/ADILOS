@@ -26,7 +26,7 @@ See [bitsanity / gatekeeper](https://github.com/bitsanity/gatekeeper)
 
 ## 3. kgprotocol
 
-Described in detail later in this document.
+Described in detail later in this document. Best to start with the videos on the [wiki](https://github.com/bitsanity/ADILOS/wiki) page.
 
 ## 4. kgagent
 
