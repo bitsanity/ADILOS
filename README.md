@@ -1,3 +1,5 @@
+**UPDATE**: ADILOS is an effective Self-Sovereign Identity System
+
 **UPDATE**: added video illustration of identification approach. See [Cryptographic SSN](https://youtu.be/vU9M11hJgXo)
 
 **UPDATE**: added ECIES encryption between kgagent and kgserver  
