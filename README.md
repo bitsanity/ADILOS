@@ -1,9 +1,11 @@
-**UPDATE**: ADILOS is an effective Self-Sovereign Identity System
+**UPDATE**: added adilos.js to help javascript-based clients use ADILOS protocol
 
-**UPDATE**: added video illustration of identification approach. See [Cryptographic SSN](https://youtu.be/vU9M11hJgXo)
+UPDATE: ADILOS is an effective Self-Sovereign Identity System
 
-**UPDATE**: added ECIES encryption between kgagent and kgserver  
-  
+UPDATE: added video illustration of identification approach. See [Cryptographic SSN](https://youtu.be/vU9M11hJgXo)
+
+UPDATE: added ECIES encryption between kgagent and kgserver  
+
 ADILOS enables computer device users to gain access to resources. ADILOS uses a well-known cryptographic approach to perform a public-key exchange over an open channel.
 
 ADILOS assumes an authorization process in which a user's public key is recorded in an ACL (access-control list) using an out-of-band communication. For a user this simply means displaying a public key so it can be entered in the ACL.
