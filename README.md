@@ -1,4 +1,6 @@
-**UPDATE**: added adilos.js to help javascript-based clients use ADILOS protocol
+**UPDATE**: moved adilos.js to an npm-compatible module. See [adilosjs](https://github.com/bitsanity/adilosjs)
+
+UPDATE: added adilos.js to help javascript-based clients use ADILOS protocol
 
 UPDATE: ADILOS is an effective Self-Sovereign Identity System
 
