@@ -1,4 +1,8 @@
-**UPDATE**: moved adilos.js to an npm-compatible module. See [adilosjs](https://github.com/bitsanity/adilosjs)
+**UPDATE**: add [adiweb](https://github.com/bitsanity/adiweb) as another example of a kgagent.
+
+UPDATE: added [simpleth](https://github.com/bitsanity/simpleth) as a newer version of keymaster.
+
+UPDATE: moved adilos.js to an npm-compatible module. See [adilosjs](https://github.com/bitsanity/adilosjs)
 
 UPDATE: added adilos.js to help javascript-based clients use ADILOS protocol
 
@@ -21,6 +25,8 @@ ADILOS contains these subsystems:
 * keymaster-gatekeeper communications interface ("kgprotocol")
 * kgagent
 * kgserver
+* simpleth
+* adiweb
 
 ## 1. keymaster
 
@@ -50,7 +56,12 @@ A network/web service that presents an authentication challenge to a connecting 
 
 See [bitsanity / kgserver](https://github.com/bitsanity/kgserver)
 
-## 3. kgprotocol (Details)
+## 6. simpleth
+
+This is another Android app like keymaster and replaces keymaster as our reference client app. Simpleth is 100% script (no native code!)
+and adds the ability to sign a 32-byte value
+
+# kgprotocol (Details)
 
 Let/note:
 
@@ -73,12 +84,12 @@ Let/note:
   * public key selected by user (33 or 65 bytes)
   * Responder's signature of the last signature in a Challenge
 
-### 3.1 Expectations for any **keymaster**
+## A. Expectations for any **keymaster**
 
 * Must work equally well with any kgprotocol-compliant gatekeeper
 * Secure the app and its data from unauthorized use (e.g. require PIN/passphrase on start)
 
-### 3.2 Expectations for any **gatekeeper**
+## B. Expectations for any **gatekeeper**
 
 * Must work equally well with any kgprotocol-compliant keymaster
 * May maintain an ACL (access control list) of authorized public keys
@@ -86,9 +97,9 @@ Let/note:
 * Must generate a new, random key for each Challenge
 * Must generate a new Challenge on start and after receipt of any cryptographically-valid Response
 
-## kgprotocol Illustration
+# kgprotocol Illustration
 
-### Key Registration
+## Key Registration
 
 | Ref. | keymaster Action | gatekeeper Action |
 |:-----|:-----------------|:------------------|
@@ -101,7 +112,7 @@ Let/note:
 | 7    | | store public key value in ACL |
 | 5    | | optional: record other user information necessary for access control |
 
-### Normal Operation
+## Normal Operation
 
 | Ref. | keymaster action | gatekeeper action |
 |:-----|:-----------------|:------------------|
