@@ -66,28 +66,6 @@ and adds the ability to sign a 32-byte value
 This is a demonstration XML-RPC service and kgagent that provides authenticated and encrypted communications without relying on HTTPS or
 any centralized certification authority.
 
-# kgprotocol (Details)
-
-Let/note:
-
-1. **Curve** is the Elliptic Curve well known to cryptographers as __secp256k1__
-2. **Signature** is an Elliptic Curve Digital Signature Algorithm (ECDSA) digital signature, generated using the Curve
-  * ECDSA signatures are 65 - 72 bytes
-3. **Verify** means use ECDSA to verify a signature using the Curve
-4. **Private Key** is a 32-byte (256-bit) unsigned big integer initialized with a random value
-5. **Public Key** is a value created by correctly applying a private key to the Curve
-  * 33 bytes if using compressed form of key:
-    * 32 bytes containing the X-coordinate of the point on the Curve
-    * leading 0x03 byte indicating compressed key
-  * 65 bytes if uncompressed form:
-    * 64 bytes for the X,Y coord pair
-    * leading 0x04 byte indicating uncompressed key
-6. A **Challenge** consists of two parts concatenated and converted to Base64:
-  * a gatekeeper's public key
-  * a signature of the public key using the corresponding private key
-7. A **Response** consists of two parts concatenated and converted to Base64:
-  * public key selected by user (33 or 65 bytes)
-  * Responder's signature of the last signature in a Challenge
 
 ## A. Expectations for any **keymaster**
 
@@ -102,9 +80,9 @@ Let/note:
 * Must generate a new, random key for each Challenge
 * Must generate a new Challenge on start and after receipt of any cryptographically-valid Response
 
-# kgprotocol Illustration
+## C. kgprotocol Illustration
 
-## Key Registration
+### Key Registration
 
 | Ref. | keymaster Action | gatekeeper Action |
 |:-----|:-----------------|:------------------|
@@ -117,7 +95,7 @@ Let/note:
 | 7    | | store public key value in ACL |
 | 5    | | optional: record other user information necessary for access control |
 
-## Normal Operation
+### Normal Operation
 
 | Ref. | keymaster action | gatekeeper action |
 |:-----|:-----------------|:------------------|
