@@ -61,11 +61,14 @@ See [bitsanity / kgserver](https://github.com/bitsanity/kgserver)
 This is another Android app like keymaster and replaces keymaster as our reference client app. Simpleth is 100% script (no native code!)
 and adds the ability to sign a 32-byte value
 
+See [bitsanity / simpleth](https://github.com/bitsanity/simpleth)
+
 ## 7. adiweb
 
 This is a demonstration XML-RPC service and kgagent that provides authenticated and encrypted communications without relying on HTTPS or
 any centralized certification authority.
 
+See [bitsanity / adiweb](https://github.com/bitsanity/adiweb)
 
 ## A. Expectations for any **keymaster**
 
