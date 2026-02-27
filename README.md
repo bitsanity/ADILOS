@@ -1,4 +1,6 @@
-**UPDATE**: add [adiweb](https://github.com/bitsanity/adiweb) as another example of a kgagent.
+**UPDATE**: using ADILOS to communicate keys and sign txns with [agent-smeth](https://github.com/bitsanity/agent-smeth)
+
+UPDATE: add [adiweb](https://github.com/bitsanity/adiweb) as another example of a kgagent.
 
 UPDATE: added [simpleth](https://github.com/bitsanity/simpleth) as a newer version of keymaster.
 
